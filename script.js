@@ -1,29 +1,35 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const voteButtons = document.querySelectorAll(".vote-btn");
-    const voteCounters = document.querySelectorAll(".votes");
-    const calculateButton = document.getElementById("calculate");
-    const resultDiv = document.getElementById("result");
+const video = document.getElementById('videoPlayer');
+const playPauseButton = document.getElementById('playPause');
+const seekBar = document.getElementById('seekBar');
+const currentTime = document.getElementById('currentTime');
+const duration = document.getElementById('duration');
 
-    const votes = [0, 0, 0];
-
-    voteButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            votes[index]++;
-            voteCounters[index].textContent = votes[index];
-        });
-    });
-
-    calculateButton.addEventListener("click", () => {
-        const totalVotes = votes.reduce((total, vote) => total + vote, 0);
-        const percentages = votes.map(vote => ((vote / totalVotes) * 100).toFixed(2));
-
-        resultDiv.innerHTML = `
-            <p>Résultats des votes :</p>
-            <ul>
-                <li>Film 1: ${votes[0]} votes (${percentages[0]}%)</li>
-                <li>Film 2: ${votes[1]} votes (${percentages[1]}%)</li>
-                <li>Film 3: ${votes[2]} votes (${percentages[2]}%)</li>
-            </ul>
-        `;
-    });
+playPauseButton.addEventListener('click', function() {
+    if (video.paused) {
+        video.play();
+        playPauseButton.textContent = 'Pause';
+    } else {
+        video.pause();
+        playPauseButton.textContent = 'Lecture';
+    }
 });
+
+video.addEventListener('timeupdate', function() {
+    const currentTimeValue = formatTime(video.currentTime);
+    currentTime.textContent = currentTimeValue;
+    const durationValue = formatTime(video.duration);
+    duration.textContent = durationValue;
+    seekBar.value = (video.currentTime / video.duration) * 100;
+});
+
+seekBar.addEventListener('input', function() {
+    const timeToSeek = (seekBar.value / 100) * video.duration;
+    video.currentTime = timeToSeek;
+});
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    seconds = Math.floor(seconds % 60);
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+}
+
