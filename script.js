@@ -1,5 +1,7 @@
+// script.js
 const video = document.getElementById('videoPlayer');
 const playPauseButton = document.getElementById('playPause');
+const muteUnmuteButton = document.getElementById('muteUnmute');
 const seekBar = document.getElementById('seekBar');
 const currentTime = document.getElementById('currentTime');
 const duration = document.getElementById('duration');
@@ -11,6 +13,16 @@ playPauseButton.addEventListener('click', function() {
     } else {
         video.pause();
         playPauseButton.textContent = 'Lecture';
+    }
+});
+
+muteUnmuteButton.addEventListener('click', function() {
+    if (video.muted) {
+        video.muted = false;
+        muteUnmuteButton.textContent = 'Son Off';
+    } else {
+        video.muted = true;
+        muteUnmuteButton.textContent = 'Son On';
     }
 });
 
@@ -32,4 +44,3 @@ function formatTime(seconds) {
     seconds = Math.floor(seconds % 60);
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 }
-
