@@ -11,8 +11,9 @@ Broadcast of Movie Nights for Teknik.
 
 # Useful links
 
-*HaxCast* -->\n
-*Teknik OwnCast* --> https://owncast.teknik.app/
+*HaxCast* --> https://frenchcamp.github.io/HaxCast
+
+*Teknik OwnCast* --> https://owncast.teknik.app/#
 
 
 
