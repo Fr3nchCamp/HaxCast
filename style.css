@@ -1,51 +1,40 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f2f2f2;
+    background-color: #333;
+    color: #fff;
     margin: 0;
     padding: 0;
 }
 
-h1 {
-    color: #333;
-}
-
-#movies {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.movie {
-    background-color: #fff;
-    border: 1px solid #ccc;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    margin: 10px;
     text-align: center;
 }
 
-.vote-btn {
+h1 {
+    color: #3498db;
+}
+
+.button {
+    display: inline-block;
     background-color: #3498db;
     color: #fff;
-    border: none;
     padding: 10px 20px;
-    cursor: pointer;
-}
-
-.votes {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-#calculate {
-    background-color: #27ae60;
-    color: #fff;
     border: none;
-    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
     cursor: pointer;
-    margin: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
 }
 
-#result {
-    font-weight: bold;
+.button:hover {
+    background-color: #258cd1;
 }
+
+/* Autres styles CSS pour personnaliser davantage votre site web */
