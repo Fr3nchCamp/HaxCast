@@ -1,11 +1,39 @@
 body {
-  background-color: #f2f2f2; /* Une nuance de gris plus claire */
-  width: 200px;
-  height: 100px;
-  border: 1px solid #ccc; /* Ajoute une bordure grise */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
-  text-align: center; /* Centre le texte à l'intérieur de l'élément */
-  line-height: 100px; /* Centre le texte verticalement */
-  font-size: 18px; /* Définit la taille de la police */
-  color: #333; /* Couleur du texte */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.video-container {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 0 10px;
+}
+
+span {
+    font-weight: bold;
 }
